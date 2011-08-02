@@ -2,8 +2,8 @@ local Gold = 10000
 
 function BuffandSkillzOnTalk(pUnit, Event, player)
 	pUnit:GossipCreateMenu(100, player, 0)
-	pUnit:GossipMenuAddItem(9, "Max out all skills.", 1, 0, "Are You Sure You Want To Max Skills?", 10*Gold)
-	pUnit:GossipMenuAddItem(9, "Buff me.", 2, 0, "Are You Sure You Want To Be Buffed Up?", 10*Gold)
+	pUnit:GossipMenuAddItem(9, "Max out all skills.", 1, 0, "Are you sure that you want to max your skills?", 10*Gold)
+	pUnit:GossipMenuAddItem(9, "Buff me.", 2, 0, "Are you sure that you want to be buffed up?", 10*Gold)
 	pUnit:GossipMenuAddItem(7, "Never mind.", 99, 0)
 	pUnit:GossipSendMenu(player)
 end
@@ -42,7 +42,7 @@ if (player:DealGoldCost(10*Gold) == true) then
 		player:AdvanceSkill(129, 2000)
 		player:AdvanceSkill(185, 2000)
 		player:AdvanceSkill(356, 2000)
-		player:SendBroadcastMessage("Your Skills Is Now Maxed!")
+		player:SendBroadcastMessage("Your skills are now maxed!")
 		player:GossipComplete()
 else
 NotEnoughMoney_Global(event, player) --See [Race_Error_Message.lua]
@@ -56,7 +56,7 @@ if (player:DealGoldCost(10*Gold) == true) then
 		pUnit:FullCastSpellOnTarget(48104, player)
 		pUnit:FullCastSpellOnTarget(58451, player)
 		pUnit:FullCastSpellOnTarget(48100, player)
-		player:SendBroadcastMessage("Enjoy Your Buffs!")
+		player:SendBroadcastMessage("Enjoy your buffs!")
 		player:GossipComplete()
 else
 NotEnoughMoney_Global(event, player) --See [Race_Error_Message.lua]
