@@ -82,7 +82,7 @@ if GetRace == 11 then ---Draenei
 	player:PlaySoundToPlayer(9466)
 	end
 end
-player:SendAreaTriggerMessage("|cFFFF0000You Don't Have Enough Bag Space!")
+player:SendAreaTriggerMessage("|cFFFF0000You don't have enough inventory space!")
 player:GossipComplete()
 end
 --[[
@@ -176,7 +176,7 @@ if GetRace == 11 then ---Draenei
 	player:PlaySoundToPlayer(9499)
 	end
 end
-player:SendAreaTriggerMessage("|cFFFF0000You Don't Have Enough Money!")
+player:SendAreaTriggerMessage("|cFFFF0000You don't have Eeough money!")
 player:GossipComplete()
 end
 --[[

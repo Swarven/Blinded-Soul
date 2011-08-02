@@ -11,7 +11,7 @@ pUnit:GossipCreateMenu(50, player, 0)
 pUnit:GossipMenuAddItem(3, "Yes!", 1, 0)
 pUnit:GossipMenuAddItem(3, "Never Mind", 2, 0)
 pUnit:GossipSendMenu(player)
-pUnit:SendChatMessage(12, 0, "Are My Men Ready For Battle " ..player:GetName().. "?")
+pUnit:SendChatMessage(12, 0, "Are my men ready for battle, " ..player:GetName().. "?")
 end
 --end
 
@@ -23,7 +23,7 @@ Highlord_Bolvar:RegisterEvent("HLBolvarPlrCheck", 2000, 0)
 end
 
 if (intid == 2) then
-pUnit:SendChatMessage(12, 0, "We Must Hurry " ..player:GetName().. ", We Have No Time To Lose!")
+pUnit:SendChatMessage(12, 0, "We must hurry " ..player:GetName().. ", we have no time to lose!")
 player:GossipComplete()
 end
 end

@@ -6,13 +6,13 @@ else
 pUnit:GossipCreateMenu(3544, player, 0)
 local race=player:GetPlayerRace()
 if race==1 or race==3 or race==4 or race==7 or race==11 then
-pUnit:GossipMenuAddItem(3, "I Need Directions Please.", 1, 0)
+pUnit:GossipMenuAddItem(3, "I need directions.", 1, 0)
 end
 local race=player:GetPlayerRace()
 if race==2 or race==5 or race==6 or race==8 or race==10 then
-pUnit:GossipMenuAddItem(3, "I Need Directions Please.", 2, 0)
+pUnit:GossipMenuAddItem(3, "I need directions.", 2, 0)
 end
-pUnit:GossipMenuAddItem(2, "Whats with the Blue Beams?", 3, 0)
+pUnit:GossipMenuAddItem(2, "What are those Blue Beams?", 3, 0)
 pUnit:GossipSendMenu(player)
 end
 end
@@ -22,18 +22,18 @@ if(intid == 999) then
 pUnit:GossipCreateMenu(99, player, 0)
 local race=player:GetPlayerRace()
 if race==1 or race==3 or race==4 or race==7 or race==11 then
-pUnit:GossipMenuAddItem(3, "I Need Directions Please.", 1, 0)
+pUnit:GossipMenuAddItem(3, "I need directions.", 1, 0)
 end
 local race=player:GetPlayerRace()
 if race==2 or race==5 or race==6 or race==8 or race==10 then
-pUnit:GossipMenuAddItem(3, "I Need Directions Please.", 2, 0)
+pUnit:GossipMenuAddItem(3, "I need directions.", 2, 0)
 end
-pUnit:GossipMenuAddItem(2, "Whats with the Blue Beams?", 3, 0)
+pUnit:GossipMenuAddItem(2, "What are those Blue Beams?", 3, 0)
 pUnit:GossipSendMenu(player)
 end
 
 if(intid == 1) then
-pUnit:SendChatMessage(12, 0, "Hello Alliance, Where do you want Direcrtions to?")
+pUnit:SendChatMessage(12, 0, "Hello there, member of the Alliance, where would you like directions to?")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(1, "The Elevator", 4, 0)
 pUnit:GossipMenuAddItem(1, "The Zeppelin Tower", 5, 0)
@@ -44,7 +44,7 @@ pUnit:GossipSendMenu(player)
 end
 
 if(intid == 2) then
-pUnit:SendChatMessage(12, 0, "Hello Horde, Where do you want Directions to?")
+pUnit:SendChatMessage(12, 0, "Hello there, member of the Horde, where would you like directions to?")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(1, "The Elevator", 21, 0)
 pUnit:GossipMenuAddItem(1, "The Zeppelin Tower", 22, 0)
@@ -55,7 +55,7 @@ pUnit:GossipSendMenu(player)
 end
 
 if(intid == 3) then
-pUnit:SendChatMessage(12, 0, "The Blue beams is what keep the giant boulders from falling, if enough of those beams stoped working, the entire upper level will fall!")
+pUnit:SendChatMessage(12, 0, "The Blue beams are keeping the giant boulders above us from falling. If enough of those beams stopped working, the entire upper level would come falling down!")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(4, "[BACK]", 999, 0)
 pUnit:GossipSendMenu(player)
@@ -92,28 +92,28 @@ end
 if (intid == 6) and player~= nil then ----Alliance Trainers
 player:GossipSendPOI(player, -1073.568604, 1580.278320, 46, 6, 0, "Battlemasters")
 player:GossipComplete()
-   player:SendBroadcastMessage("The Trainers is now located on your minimap! [The Trainers is on the 2nd floor!]")
+   player:SendBroadcastMessage("The trainers are now located on your minimap! [The trainers are on the 2nd floor!]")
    player:SendAreaTriggerMessage("LOOK AT YOUR MINIMAP!")
 end
 
 if (intid == 20) and player~= nil then ----Alliance L70ETC Stage
 player:GossipSendPOI(player, -1135.165894, 1577.692139, 46, 6, 0, "L70ETC Stage")
 player:GossipComplete()
-   player:SendBroadcastMessage("The L70ETC Stage is now located on your minimap! [The L70ETC Stage is on the 1st floor!]")
+   player:SendBroadcastMessage("The L70ETC Stage is now located on your minimap! [The L70ETC Stage is on the ground floor!]")
    player:SendAreaTriggerMessage("LOOK AT YOUR MINIMAP!")
 end
 
 if (intid == 23) and player~= nil then ----Horde Trainers
 player:GossipSendPOI(player, -1073.568604, 1580.278320, 48, 6, 0, "Battlemasters")
 player:GossipComplete()
-   player:SendBroadcastMessage("The Trainers is now located on your minimap! [The Trainers is on the 2nd floor!]")
+   player:SendBroadcastMessage("The trainers are now located on your minimap! [The trainers are on the 2nd floor!]")
    player:SendAreaTriggerMessage("LOOK AT YOUR MINIMAP!")
 end
 
 if (intid == 37) and player~= nil then ----Horde L70ETC Stage
 player:GossipSendPOI(player, -1135.165894, 1577.692139, 48, 6, 0, "L70ETC Stage")
 player:GossipComplete()
-   player:SendBroadcastMessage("The L70ETC Stage is now located on your minimap! [The L70ETC Stage is on the 1st floor!]")
+   player:SendBroadcastMessage("The L70ETC Stage is now located on your minimap! [The L70ETC Stage is on the ground floor!]")
    player:SendAreaTriggerMessage("LOOK AT YOUR MINIMAP!")
 end
 end
@@ -139,7 +139,7 @@ function Check_PvP(pUnit, Event, Player)
 
 	for index, player in pairs(Player_W) do
 	if (player:IsPlayerAttacking() == true) then
-	player:SendAreaTriggerMessage("PVP is Not allowed in the Blinded-Soul Mall! NOW DIE!")
+	player:SendAreaTriggerMessage("PVP is not allowed in the Blinded-Soul Mall! NOW DIE!")
 	pUnit:FullCastSpellOnTarget(31984, player)
 		end
 	end
