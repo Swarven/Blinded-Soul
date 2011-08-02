@@ -119,7 +119,7 @@ pUnit:SetHealth(DracoFight:GetHealth())
 pUnit:SetMovementType(256)
 pUnit:ModifyWalkSpeed(7)
 pUnit:MoveTo(-248.328094, 162.778381, -18.64566, 2.26384)
-DracoFight:Despawn(1500,0)
+DracoFight:Despawn(1,0)
 pUnit:RegisterEvent("Draco_Cinematicb", 7000, 0)
 end
 
@@ -410,8 +410,7 @@ end
 function SancOfFlameCinaa(pUnit, Event)
     pUnit:RemoveEvents()
 	SoFGurlock:SetMovementType(256)
-	SoFGurlock:SetMoveRunFlag(1)
-	SoFGurlock:ModifyWalkSpeed(16)
+	SoFGurlock:ModifyRunSpeed(8)
 	SoFGurlock:SetOrientation(1.334732)
 	SoFGurlock:MoveTo(-245.224640, 147.438416, -18.7)
     SoFGurlock:SendChatMessage(14, 0, "\124c00FF3333Lok'tar Ogar!")
