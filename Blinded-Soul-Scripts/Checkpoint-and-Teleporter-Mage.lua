@@ -7,7 +7,7 @@ player:SendAreaTriggerMessage("You are in combat!")
 else
 pUnit:GossipCreateMenu(3544, player, 0)
 pUnit:GossipMenuAddItem(2, "Teleport Me!", 1, 0)
-pUnit:GossipMenuAddItem(6, "Give Me Checkpoint Crystals!", 2, 0)
+pUnit:GossipMenuAddItem(6, "Give me Checkpoint Crystals!", 2, 0)
 pUnit:GossipMenuAddItem(7, "Never Mind", 3, 0)
 pUnit:GossipSendMenu(player)
 end
@@ -31,14 +31,14 @@ end
 --====================================--
 if(intid == 2) then
 if (player:GetItemCount(180000) == 1) then
-player:SendBroadcastMessage("\124c00FF3333[Warning]\124r \124c00FFFF00You Already Have A Checkpoint Saved At [Stairs Of Destiny Checkpoint 1]! Going on Will Delete Your Checkpoint Stone, Forcing you to restart! Do You want To Go On?\124r")
+player:SendBroadcastMessage("\124c00FF3333[Warning]\124r \124c00FFFF00You already have a Checkpoint saved at [Stairs Of Destiny Checkpoint 1]! Going on will delete your Checkpoint Stone, Forcing you to restart! Do you want to continue?\124r")
 pUnit:GossipCreateMenu(3544, player, 0)
 pUnit:GossipMenuAddItem(2, "Yes", 5, 0)
 pUnit:GossipMenuAddItem(6, "No", 3, 0)
 pUnit:GossipSendMenu(player)
 else
 if (player:GetItemCount(180006) == 1) then
-player:SendBroadcastMessage("\124c00FF3333[Warning]\124r \124c00FFFF00You Already Have A Checkpoint Saved At [Stairs Of Destiny Checkpoint 2]! Going on Will Delete Your Checkpoint Stone, Forcing you to restart! Do You want To Go On?\124r")
+player:SendBroadcastMessage("\124c00FF3333[Warning]\124r \124c00FFFF00You already have a Checkpoint saved at [Stairs Of Destiny Checkpoint 2]! Going on will delete your Checkpoint Stone, Forcing you to restart! Do you want to continue?\124r")
 pUnit:GossipCreateMenu(3544, player, 0)
 pUnit:GossipMenuAddItem(2, "Yes", 5, 0)
 pUnit:GossipMenuAddItem(6, "No", 3, 0)
@@ -47,7 +47,7 @@ else
 local CCDel = player:GetItemCount(CheckPointCrystal)
 player:RemoveItem(CheckPointCrystal,CCDel)
 player:AddItem(CheckPointCrystal,5)
-player:SendBroadcastMessage("\124c0033FF33[5]\124r \124c00FFFF00Checkpoint Crystals Added For The Event!\124r")
+player:SendBroadcastMessage("\124c0033FF33[5]\124r \124c00FFFF00Checkpoint Crystals added for the Event!\124r")
 	player:GossipComplete()
 end
 end
@@ -62,7 +62,7 @@ player:RemoveItem(180000,SOD1Del)
 player:RemoveItem(180006,SOD2Del)
 player:AddItem(CheckPointCrystal,5)
 player:SendBroadcastMessage("\124c00FF3333[CheckPoint Deleted]\124r")
-player:SendBroadcastMessage("\124c0033FF33[5]\124r \124c00FFFF00Checkpoint Crystals Added For The Event!\124r")
+player:SendBroadcastMessage("\124c0033FF33[5]\124r \124c00FFFF00Checkpoint Crystals added for the Event!\124r")
 	player:GossipComplete()
 end
 --====================================--

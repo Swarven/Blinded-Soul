@@ -6,7 +6,7 @@ player:SendAreaTriggerMessage("You are in combat!")
 else
 pUnit:GossipCreateMenu(3544, player, 0)
 pUnit:GossipMenuAddItem(3, "Show me where I can fly!", 1, 0)
-pUnit:GossipMenuAddItem(3, "where am I?", 2, 0)
+pUnit:GossipMenuAddItem(3, "Where am I?", 2, 0)
 pUnit:GossipSendMenu(player)
 end
 end
@@ -21,11 +21,11 @@ end
 
 
 if(intid == 1) then
-pUnit:SendChatMessage(12, 0, "Where would you like to go Traveler?")
+pUnit:SendChatMessage(12, 0, "Where would you like to go, traveller?")
 pUnit:GossipCreateMenu(99, player, 0)
 local race=player:GetPlayerRace()
 if race==2 or race==5 or race==6 or race==8 or race==10 then
-pUnit:GossipMenuAddItem(1, "Lost Refugee", 3, 0)
+pUnit:GossipMenuAddItem(1, "The Lost Refuge", 3, 0)
 end
 if (player:HasFinishedQuest(1000008) == true) then
 pUnit:GossipMenuAddItem(1, "Horde Encampment", 6, 0)
@@ -42,14 +42,14 @@ pUnit:GossipSendMenu(player)
 end
 
 if(intid == 2) then
-pUnit:SendChatMessage(12, 0, "You are currently at Blinded-Soul World Mall! If you would like to go somewhere else, just tell me!")
+pUnit:SendChatMessage(12, 0, "You are currently at Blinded-Soul World Mall! If you would like to go somewhere else, speak to me again.")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(0, "[Back]", 999, 0)
 pUnit:GossipSendMenu(player)
 end
 
 
-if(intid == 3) then --Lost Refugee
+if(intid == 3) then --The Lost Refuge
 player:Teleport(1, 5170.971191, -1355.381104, 1392)
 pUnit:GossipComplete(player)
 end
@@ -92,12 +92,12 @@ function LostRefugeeZep_OnGossipSelect(pUnit, event, player, id, intid, code, pM
 if(intid == 999) then
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(3, "Show me where I can fly!", 1, 0)
-pUnit:GossipMenuAddItem(3, "where am I?", 2, 0)
+pUnit:GossipMenuAddItem(3, "Where am I?", 2, 0)
 pUnit:GossipSendMenu(player)
 end
 
 if(intid == 1) then
-pUnit:SendChatMessage(12, 0, "Where would you like to go Traveler?")
+pUnit:SendChatMessage(12, 0, "Where would you like to go, traveller?")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(1, "Blinded-Soul Mall", 3, 0)
 if (player:HasFinishedQuest(1000008) == true) then
@@ -108,7 +108,7 @@ pUnit:GossipSendMenu(player)
 end
 
 if(intid == 2) then
-pUnit:SendChatMessage(12, 0, "You are currently at Lost Refugee! If you would like to go somewhere else, just tell me!")
+pUnit:SendChatMessage(12, 0, "You are currently at The Lost Refuge! If you would like to go somewhere else, speak to me again.")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(0, "[Back]", 999, 0)
 pUnit:GossipSendMenu(player)
@@ -148,7 +148,7 @@ function TheSanctuaryZep_OnGossipSelect(pUnit, event, player, id, intid, code, p
 if(intid == 999) then
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(3, "Show me where I can fly!", 1, 0)
-pUnit:GossipMenuAddItem(3, "where am I?", 2, 0)
+pUnit:GossipMenuAddItem(3, "Where am I?", 2, 0)
 pUnit:GossipSendMenu(player)
 end
 
@@ -164,7 +164,7 @@ pUnit:GossipSendMenu(player)
 end
 
 if(intid == 2) then
-pUnit:SendChatMessage(12, 0, "You are currently at The Sanctuary! If you would like to go somewhere else, just tell me!")
+pUnit:SendChatMessage(12, 0, "You are currently at The Sanctuary! If you would like to go somewhere else, speak to me again.")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(0, "[Back]", 999, 0)
 pUnit:GossipSendMenu(player)
@@ -204,21 +204,21 @@ function HordeEncampmentZep_OnGossipSelect(pUnit, event, player, id, intid, code
 if(intid == 999) then
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(3, "Show me where I can fly!", 1, 0)
-pUnit:GossipMenuAddItem(3, "where am I?", 2, 0)
+pUnit:GossipMenuAddItem(3, "Where am I?", 2, 0)
 pUnit:GossipSendMenu(player)
 end
 
 if(intid == 1) then
-pUnit:SendChatMessage(12, 0, "Where would you like to go Traveler?")
+pUnit:SendChatMessage(12, 0, "Where would you like to go, traveller?")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(1, "Blinded-Soul Mall", 3, 0)
-pUnit:GossipMenuAddItem(1, "Lost Refugee", 4, 0)
+pUnit:GossipMenuAddItem(1, "The Lost Refuge", 4, 0)
 pUnit:GossipMenuAddItem(0, "[Back]", 999, 0)
 pUnit:GossipSendMenu(player)
 end
 
 if(intid == 2) then
-pUnit:SendChatMessage(12, 0, "You are currently at Horde Encampment! If you would like to go somewhere else, just tell me!")
+pUnit:SendChatMessage(12, 0, "You are currently at Horde Encampment! If you would like to go somewhere else, speak to me again.")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(0, "[Back]", 999, 0)
 pUnit:GossipSendMenu(player)
@@ -230,7 +230,7 @@ player:Teleport(0, -1009.669922, 1548.671509, 148)
 pUnit:GossipComplete(player)
 end
 
-if(intid == 4) then --Lost Refugee
+if(intid == 4) then --The Lost Refuge
 player:Teleport(1, 5170.971191, -1355.381104, 1392)
 pUnit:GossipComplete(player)
 end
@@ -259,12 +259,12 @@ function AllianceEncampmentZep_OnGossipSelect(pUnit, event, player, id, intid, c
 if(intid == 999) then
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(3, "Show me where I can fly!", 1, 0)
-pUnit:GossipMenuAddItem(3, "where am I?", 2, 0)
+pUnit:GossipMenuAddItem(3, "Where am I?", 2, 0)
 pUnit:GossipSendMenu(player)
 end
 
 if(intid == 1) then
-pUnit:SendChatMessage(12, 0, "Where would you like to go Traveler?")
+pUnit:SendChatMessage(12, 0, "Where would you like to go, traveller?")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(1, "Blinded-Soul Mall", 3, 0)
 pUnit:GossipMenuAddItem(1, "The Sanctuary", 4, 0)
@@ -273,7 +273,7 @@ pUnit:GossipSendMenu(player)
 end
 
 if(intid == 2) then
-pUnit:SendChatMessage(12, 0, "You are currently at Alliance Encampment! If you would like to go somewhere else, just tell me!")
+pUnit:SendChatMessage(12, 0, "You are currently at Alliance Encampment! If you would like to go somewhere else, speak to me again.")
 pUnit:GossipCreateMenu(99, player, 0)
 pUnit:GossipMenuAddItem(0, "[Back]", 999, 0)
 pUnit:GossipSendMenu(player)
