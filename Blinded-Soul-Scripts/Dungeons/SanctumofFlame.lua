@@ -11,7 +11,7 @@ local KeepFreezing = 990113
 local KingPortal = 668872
 local LichKingPortal = 668871
 --=========================--
--- FireL:SetUInt32Value(58, 26) -- fail... but usefull...
+-- SoFArthas:SetUInt32Value(58, 26) -- fail... but usefull...
 function LichKing_Portal_OnSpawn(Event, GObj)
 LichKingPortal = Event
 end
@@ -42,30 +42,30 @@ end
 RegisterUnitEvent(990115, 18, "FireClosestNPC_OnSpawn")
 
 function Charles_AllianceKing_OnSpawn(pUnit, Event)
-FireA = pUnit
-FireA:SendChatMessage(14, 0, "\124c000070ddWait Ragnaros!")
-FireA:Emote(5, 2000)
-FireA:EquipWeapons(23456, 18825, 0)
+SoFTirion = pUnit
+SoFTirion:SendChatMessage(14, 0, "\124c000070ddWait Ragnaros!")
+SoFTirion:Emote(5, 2000)
+SoFTirion:EquipWeapons(23456, 18825, 0)
 end
 RegisterUnitEvent(990110, 18, "Charles_AllianceKing_OnSpawn")
 
 function Gorlock_HordeKing_OnSpawn(pUnit, Event)
-FireH = pUnit
-FireH:EquipWeapons(19363, 34676, 0)
+SoFGurlock = pUnit
+SoFGurlock:EquipWeapons(19363, 34676, 0)
 end
 RegisterUnitEvent(990109, 18, "Gorlock_HordeKing_OnSpawn")
 
 function LichKing_OnSpawn(pUnit, Event)
-    FireL = pUnit
-	FireL:EquipWeapons(36942, 0, 0)
-	FireL:SetByteValue(0x7A, 0, 1) ---Weild Weapon Test.... Success WEWT!
-	FireL:RegisterEvent("LichKing_TalkBegin", 500, 1) --<---- Never Knew This, But Adding The 1 = Only Registers Once... weird but usefull
+    SoFArthas = pUnit
+	SoFArthas:EquipWeapons(36942, 0, 0)
+	SoFArthas:SetByteValue(0x7A, 0, 1) ---Weild Weapon Test.... Success WEWT!
+	SoFArthas:RegisterEvent("LichKing_TalkBegin", 500, 1) --<---- Never Knew This, But Adding The 1 = Only Registers Once... weird but usefull
 end
 
 ---this Function changes its phase....--
 function LichKing_TalkBegin(pUnit, Event)
-FireL:SendChatMessage(12, 0, "\124c007FFFD4I will not allow you to do this...")
-FireL:MoveTo(-243.800919, 145.987686, -18.642220, 1.865927)
+SoFArthas:SendChatMessage(12, 0, "\124c007FFFD4I will not allow you to do this...")
+SoFArthas:MoveTo(-243.800919, 145.987686, -18.642220, 1.865927)
 end
 -----------------------------------------
 RegisterUnitEvent(990112, 18, "LichKing_OnSpawn")
@@ -168,7 +168,7 @@ end
 --=========Ragnaros Takes Over The Script===========--
 function Ragnaros_OnSpawn(pUnit, Event)
 	pUnit:Emote(449, 2700)
-	FireR = pUnit
+	SoFRaggy = pUnit
     pUnit:RegisterEvent("Rag_Cinematica", 4100, 0)
 end
 
@@ -261,106 +261,106 @@ end
 
 function Rag_Cinematicl(pUnit, Event)
     pUnit:RemoveEvents()
-    FireR:SetFacing(5.36497)
+    SoFRaggy:SetFacing(5.36497)
     pUnit:SetOrientation(5.36497)
-	FireR:SendChatMessage(14, 0, "\124c00FFA500What is the meaning of this..?")
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500What is the meaning of this..?")
 	pUnit:RegisterEvent("Rag_Cinematicm", 3000, 0)
 end
 
 function Rag_Cinematicm(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:Emote(1, 2000)
-	FireA:SendChatMessage(12, 0, "\124c000070ddI am Tirion Fordring, King of the Alliance.")
+	SoFTirion:Emote(1, 2000)
+	SoFTirion:SendChatMessage(12, 0, "\124c000070ddI am Tirion Fordring, King of the Alliance.")
 	pUnit:RegisterEvent("Rag_Cinematicn", 3000, 0)
 end
 
 function Rag_Cinematicn(pUnit, Event)
     pUnit:RemoveEvents()
-	FireH:Emote(1, 2000)
-	FireH:SetFacing(2.112275)
-    FireH:SetOrientation(2.112275)
-	FireA:SetFacing(2.344839)
-    FireA:SetOrientation(2.344839)
-	FireH:SendChatMessage(12, 0, "\124c00FF3333And I am Gorlock, Warchief of the Horde.")
+	SoFGurlock:Emote(1, 2000)
+	SoFGurlock:SetFacing(2.112275)
+    SoFGurlock:SetOrientation(2.112275)
+	SoFTirion:SetFacing(2.344839)
+    SoFTirion:SetOrientation(2.344839)
+	SoFGurlock:SendChatMessage(12, 0, "\124c00FF3333And I am Gorlock, Warchief of the Horde.")
 	pUnit:RegisterEvent("Rag_Cinematico", 3000, 0)
 end
 
 function Rag_Cinematico(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:Emote(1, 2000)
-	FireA:SendChatMessage(12, 0, "\124c000070ddWe are here to discuss matters pertaining to your treaty with Arthas.")
+	SoFTirion:Emote(1, 2000)
+	SoFTirion:SendChatMessage(12, 0, "\124c000070ddWe are here to discuss matters pertaining to your treaty with Arthas.")
 	pUnit:RegisterEvent("Rag_Cinematicp", 2500, 0)
 end
 
 function Rag_Cinematicp(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500I tire of this. I have more important matters to attend to...")
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500I tire of this. I have more important matters to attend to...")
 	pUnit:RegisterEvent("Rag_Cinematicq", 4000, 0)
 end
 
 function Rag_Cinematicq(pUnit, Event)
     pUnit:RemoveEvents()
-	FireH:Emote(15, 3000)
-	FireH:SendChatMessage(14, 0, "\124c00FF3333With Arthas? You are being manipulated, Ragnaros! He plans to use you to achieve his ultimate goal: To dominate Azeroth and extinquish all of those living in it!")
-	FireH:RegisterEvent("HEmotea", 3000, 0)
+	SoFGurlock:Emote(15, 3000)
+	SoFGurlock:SendChatMessage(14, 0, "\124c00FF3333With Arthas? You are being manipulated, Ragnaros! He plans to use you to achieve his ultimate goal: To dominate Azeroth and extinquish all of those living in it!")
+	SoFGurlock:RegisterEvent("HEmotea", 3000, 0)
 end
 ---Emotes... Long Talk---
         function HEmotea(pUnit, Event)
         pUnit:RemoveEvents()
-	    FireH:Emote(5, 2000)
-	    FireH:RegisterEvent("HEmoteb", 3500, 0)
+	    SoFGurlock:Emote(5, 2000)
+	    SoFGurlock:RegisterEvent("HEmoteb", 3500, 0)
         end
 		
 		function HEmoteb(pUnit, Event)
         pUnit:RemoveEvents()
-	    FireH:Emote(1, 2000)
-	    FireR:RegisterEvent("SancOfFlameCina", 4500, 0) --New Register Name, Running out of letters...
+	    SoFGurlock:Emote(1, 2000)
+	    SoFRaggy:RegisterEvent("SancOfFlameCina", 4500, 0) --New Register Name, Running out of letters...
         end
 -----------------------
 function SancOfFlameCina(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500I see.. Perhaps I am making a mistake..")
-	FireR:RegisterEvent("SancOfFlameCinb", 3000, 0)
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500I see.. Perhaps I am making a mistake..")
+	SoFRaggy:RegisterEvent("SancOfFlameCinb", 3000, 0)
 end
 
 function SancOfFlameCinb(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:Emote(1, 4000)
-	FireA:SendChatMessage(12, 0, "\124c000070ddI am afraid to say that this is no lie. His forces have already crippled our cities and our armies, you could well be next.")
-	FireR:RegisterEvent("SancOfFlameCinc", 6000, 0)
+	SoFTirion:Emote(1, 4000)
+	SoFTirion:SendChatMessage(12, 0, "\124c000070ddI am afraid to say that this is no lie. His forces have already crippled our cities and our armies, you could well be next.")
+	SoFRaggy:RegisterEvent("SancOfFlameCinc", 6000, 0)
 end
 
 function SancOfFlameCinc(pUnit, Event)
     pUnit:RemoveEvents()
-    local ALL = FireR:GetInRangePlayers()
+    local ALL = SoFRaggy:GetInRangePlayers()
 	for k, v in pairs(ALL) do
     v:SendBroadcastMessage("Ragnaros enters a deep thought...")
 	end
-	FireR:RegisterEvent("SancOfFlameCind", 3000, 0)
+	SoFRaggy:RegisterEvent("SancOfFlameCind", 3000, 0)
 end
 
 function SancOfFlameCind(pUnit, Event)
     pUnit:RemoveEvents()
-    FireH:Emote(1, 4000)
-	FireH:SendChatMessage(12, 0, "\124c00FF3333Arthas NEEDS you Ragnaros, and once you have outlived your usefulness to him, he will destroy you, and take your power for his own.")
-	FireR:RegisterEvent("SancOfFlameCine", 6000, 0)
+    SoFGurlock:Emote(1, 4000)
+	SoFGurlock:SendChatMessage(12, 0, "\124c00FF3333Arthas NEEDS you Ragnaros, and once you have outlived your usefulness to him, he will destroy you, and take your power for his own.")
+	SoFRaggy:RegisterEvent("SancOfFlameCine", 6000, 0)
 end
 
 function SancOfFlameCine(pUnit, Event)
     pUnit:RemoveEvents()
-    FireA:Emote(1, 4000)
-	FireA:SendChatMessage(12, 0, "\124c000070ddJust take a look at what he has done already, so many innocent lives have been lost. We cannot let this continue!")
-	FireR:RegisterEvent("SancOfFlameCinf", 5000, 0)
+    SoFTirion:Emote(1, 4000)
+	SoFTirion:SendChatMessage(12, 0, "\124c000070ddJust take a look at what he has done already, so many innocent lives have been lost. We cannot let this continue!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinf", 5000, 0)
 end
 
 function SancOfFlameCinf(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500Very well, I will end my negotiations with Arthas, and pledge myself and my forces against Arthas and the Scourge!")
-	FireR:RegisterEvent("SancOfFlameCing", 2000, 0)
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500Very well, I will end my negotiations with Arthas, and pledge myself and my forces against Arthas and the Scourge!")
+	SoFRaggy:RegisterEvent("SancOfFlameCing", 2000, 0)
 end
 
 function SancOfFlameCing(pUnit, Event)
-	local PlayerColorc = FireR:GetInRangePlayers()
+	local PlayerColorc = SoFRaggy:GetInRangePlayers()
     for index, player in pairs(PlayerColorc) do
     player:SendAreaTriggerMessage("Cinematic Color Text Added")
     player:SendBroadcastMessage("==Cinematic Color Text Added==")
@@ -368,7 +368,7 @@ function SancOfFlameCing(pUnit, Event)
     player:SendBroadcastMessage("==========================")
 	end
 	pUnit:RemoveEvents()
-	FireR:RegisterEvent("SancOfFlameCinh", 2000, 0)
+	SoFRaggy:RegisterEvent("SancOfFlameCinh", 2000, 0)
 end
 
 function SancOfFlameCinh(pUnit, Event)
@@ -377,162 +377,162 @@ function SancOfFlameCinh(pUnit, Event)
     for index, player in pairs(LichYell) do
     player:SendBroadcastMessage("\124c00FF3333The Lich King yells:\124r \124c007FFFD4NO!")
 	end
-	FireR:RegisterEvent("SancOfFlameCini", 2000, 0)
+	SoFRaggy:RegisterEvent("SancOfFlameCini", 2000, 0)
 end
 
 function SancOfFlameCini(pUnit, Event)
     pUnit:RemoveEvents()
 	pUnit:SpawnGameObject(668871, -241.506485, 140.222244, -18.680859, 5.166350, 0)
 	LichKingPortal:SetScale(2.5)--Makes Portal Bigger For The Lich King's Big Ass...
-	FireR:RegisterEvent("SancOfFlameCinj", 2000, 0)
+	SoFRaggy:RegisterEvent("SancOfFlameCinj", 2000, 0)
 end
 
 function SancOfFlameCinj(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:SetFacing(3.834716)
-    FireA:SetOrientation(3.834716)
-    FireH:SetFacing(5.266430)
-    FireH:SetOrientation(5.266430)
-	FireR:SpawnCreature(LichKing, -240.731, 139.047, -18.6238, 1.86733, 35, 0);
-	FireR:RegisterEvent("SancOfFlameCink", 4000, 0)
+	SoFTirion:SetFacing(3.834716)
+    SoFTirion:SetOrientation(3.834716)
+    SoFGurlock:SetFacing(5.266430)
+    SoFGurlock:SetOrientation(5.266430)
+	SoFRaggy:SpawnCreature(LichKing, -240.731, 139.047, -18.6238, 1.86733, 35, 0);
+	SoFRaggy:RegisterEvent("SancOfFlameCink", 4000, 0)
 end
 
 function SancOfFlameCink(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:Emote(45, 10000)
-	FireH:Emote(45, 10000)
-    FireA:SendChatMessage(14, 0, "\124c000070ddARTHAS!")
-	FireR:RegisterEvent("SancOfFlameCinl", 2500, 0)
+	SoFTirion:Emote(45, 10000)
+	SoFGurlock:Emote(45, 10000)
+    SoFTirion:SendChatMessage(14, 0, "\124c000070ddARTHAS!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinl", 2500, 0)
 end
 
 function SancOfFlameCinl(pUnit, Event)
     pUnit:RemoveEvents()
-    FireH:SendChatMessage(14, 0, "\124c00FF3333You shall pay for what you have done, you monster!")
-	FireR:RegisterEvent("SancOfFlameCinaa", 3000, 0)
+    SoFGurlock:SendChatMessage(14, 0, "\124c00FF3333You shall pay for what you have done, you monster!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinaa", 3000, 0)
 end
 
 function SancOfFlameCinaa(pUnit, Event)
     pUnit:RemoveEvents()
-	FireH:SetMovementType(256)
-	FireH:ModifyWalkSpeed(8)
-	FireH:MoveTo(-245.224640, 147.438416, -18.7)
-    FireH:SendChatMessage(14, 0, "\124c00FF3333Lok'tar Ogar!")
-	FireR:RegisterEvent("SancOfFlameCinab", 1000, 0)
+	SoFGurlock:SetMovementType(256)
+	SoFGurlock:ModifyWalkSpeed(8)
+	SoFGurlock:MoveTo(-245.224640, 147.438416, -18.7)
+    SoFGurlock:SendChatMessage(14, 0, "\124c00FF3333Lok'tar Ogar!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinab", 1000, 0)
 end
 
 function SancOfFlameCinab(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:SetFacing(2.309550)
-    FireL:SetOrientation(2.309550)
-	FireH:Emote(35, 5000)
-	FireR:RegisterEvent("SancOfFlameCinac", 2000, 0)
+	SoFArthas:SetFacing(2.309550)
+    SoFArthas:SetOrientation(2.309550)
+	SoFGurlock:Emote(35, 5000)
+	SoFRaggy:RegisterEvent("SancOfFlameCinac", 2000, 0)
 end
 
 function SancOfFlameCinac(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:Emote(54, 1500)
-	FireR:RegisterEvent("SancOfFlameCinad", 1200, 0)
+	SoFArthas:Emote(54, 1500)
+	SoFRaggy:RegisterEvent("SancOfFlameCinad", 1200, 0)
 end
 
 function SancOfFlameCinad(pUnit, Event)
     pUnit:RemoveEvents()
-	FireH:CastSpell(71614)
-	FireR:RegisterEvent("SancOfFlameCinae", 1000, 0)
+	SoFGurlock:CastSpell(71614)
+	SoFRaggy:RegisterEvent("SancOfFlameCinae", 1000, 0)
 end
 
 function SancOfFlameCinae(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:MoveTo(-238.745773, 148.538925, -18.7)
-	FireL:SendChatMessage(12, 0, "\124c007FFFD4Pathetic..")
-	FireR:RegisterEvent("SancOfFlameCinaf", 2500, 0)
+	SoFArthas:MoveTo(-238.745773, 148.538925, -18.7)
+	SoFArthas:SendChatMessage(12, 0, "\124c007FFFD4Pathetic..")
+	SoFRaggy:RegisterEvent("SancOfFlameCinaf", 2500, 0)
 end
 
 function SancOfFlameCinaf(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:SetFacing(1.883513)
-    FireL:SetOrientation(1.883513)
-	FireR:RegisterEvent("SancOfFlameCinag", 3000, 0)
+	SoFArthas:SetFacing(1.883513)
+    SoFArthas:SetOrientation(1.883513)
+	SoFRaggy:RegisterEvent("SancOfFlameCinag", 3000, 0)
 end
 
 function SancOfFlameCinag(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:Emote(375, 1000)
-    FireA:SendChatMessage(14, 0, "\124c000070ddATTACK!")
-	FireR:RegisterEvent("SancOfFlameCinah", 2000, 1)
+	SoFTirion:Emote(375, 1000)
+    SoFTirion:SendChatMessage(14, 0, "\124c000070ddATTACK!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinah", 2000, 1)
 end
 
 function SancOfFlameCinah(pUnit, Event)
     pUnit:RemoveEvents()
-    FireL:SendChatMessage(14, 0, "\124c007FFFD4HA HA HA! so weak and powerless.. you will fall by the Wrath of the Lich King!")
-	FireR:RegisterEvent("SancOfFlameCinai", 1000, 0)
+    SoFArthas:SendChatMessage(14, 0, "\124c007FFFD4HA HA HA! so weak and powerless.. you will fall by the Wrath of the Lich King!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinai", 1000, 0)
 end
 
 function SancOfFlameCinai(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:FullCastSpell(68981)
-	FireR:RegisterEvent("SancOfFlameCinaj", 4500, 0)
+	SoFArthas:FullCastSpell(68981)
+	SoFRaggy:RegisterEvent("SancOfFlameCinaj", 4500, 0)
 end
 
 function SancOfFlameCinaj(pUnit, Event)
     pUnit:RemoveEvents()
-	local FreezeAll = FireL:GetInRangePlayers()
+	local FreezeAll = SoFArthas:GetInRangePlayers()
 	for k, v in pairs(FreezeAll) do
 	v:CastSpell(71614) ---You Can Dispell Think By Clicking It, Making A Function To Keep Casting On Players....
 	v:SetPlayerLock(true)
 	end
-	FireA:CastSpell(71614)
-	FireL:RemoveAura(68981)
-	FireL:CancelSpell(68981)
-	FireL:SendChatMessage(14, 0, "\124c007FFFD4Pathetic mortals..")
-	FireR:SpawnCreature(KeepFreezing, -244.445099, 180.548996, -29.92, 5.555173, 35, 0);
-	FireR:RegisterEvent("SancOfFlameCinak", 2000, 0)
+	SoFTirion:CastSpell(71614)
+	SoFArthas:RemoveAura(68981)
+	SoFArthas:CancelSpell(68981)
+	SoFArthas:SendChatMessage(14, 0, "\124c007FFFD4Pathetic mortals..")
+	SoFRaggy:SpawnCreature(KeepFreezing, -244.445099, 180.548996, -29.92, 5.555173, 35, 0);
+	SoFRaggy:RegisterEvent("SancOfFlameCinak", 2000, 0)
 end
 
 function SancOfFlameCinak(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:MoveTo(-249.227280, 161.655136, -18.7)
-	FireR:RegisterEvent("SancOfFlameCinal", 6500, 0)
+	SoFArthas:MoveTo(-249.227280, 161.655136, -18.7)
+	SoFRaggy:RegisterEvent("SancOfFlameCinal", 6500, 0)
 end
 
 function SancOfFlameCinal(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500Arthas, leave this place, and never return!")
-	FireR:RegisterEvent("SancOfFlameCinam", 2500, 0)
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500Arthas, leave this place, and never return!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinam", 2500, 0)
 end
 
 function SancOfFlameCinam(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:SendChatMessage(14, 0, "\124c007FFFD4I believe we had a deal..")
-	FireR:RegisterEvent("SancOfFlameCinan", 2500, 0)
+	SoFArthas:SendChatMessage(14, 0, "\124c007FFFD4I believe we had a deal..")
+	SoFRaggy:RegisterEvent("SancOfFlameCinan", 2500, 0)
 end
 
 function SancOfFlameCinan(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500Negotiations are over! I will never ally myself with the likes of you!")
-	FireR:RegisterEvent("SancOfFlameCinao", 2500, 0)
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500Negotiations are over! I will never ally myself with the likes of you!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinao", 2500, 0)
 end
 
 function SancOfFlameCinao(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:Emote(397, 3000)
-	FireL:SendChatMessage(14, 0, "\124c007FFFD4Then I will have to destroy you. You have sealed your own fate.")
-	FireR:RegisterEvent("SancOfFlameCinap", 3500, 0)
+	SoFArthas:Emote(397, 3000)
+	SoFArthas:SendChatMessage(14, 0, "\124c007FFFD4Then I will have to destroy you. You have sealed your own fate.")
+	SoFRaggy:RegisterEvent("SancOfFlameCinap", 3500, 0)
 end
 
 function SancOfFlameCinap(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500NO ARTHAS! IT IS YOU WHO HAS SEALED YOUR OWN!")
-	FireR:RegisterEvent("SancOfFlameCinaq", 2500, 0)
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500NO ARTHAS! IT IS YOU WHO HAS SEALED YOUR OWN!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinaq", 2500, 0)
 end
 
 function SancOfFlameCinaq(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:Emote(434, 500)
-	FireR:RegisterEvent("SancOfFlameCinar", 2000, 0)
+	SoFRaggy:Emote(434, 500)
+	SoFRaggy:RegisterEvent("SancOfFlameCinar", 2000, 0)
 end
 
 function SancOfFlameCinar(pUnit, Event)
-	local DefrostAll = FireR:GetInRangePlayers()
+	local DefrostAll = SoFRaggy:GetInRangePlayers()
 	for k, v in pairs(DefrostAll) do
 	local x = v:GetX();
     local y = v:GetY();
@@ -540,86 +540,86 @@ function SancOfFlameCinar(pUnit, Event)
     pUnit:RemoveEvents()
 	pUnit:SpawnGameObject(70324, x, y, z, 0, 3501)
 	end
-	pUnit:SpawnGameObject(70324, FireH:GetX(), FireH:GetY(), FireH:GetZ(), 0, 3500)
-	pUnit:SpawnGameObject(70324, FireA:GetX(), FireA:GetY(), FireA:GetZ(), 0, 3500)
-	FireR:RegisterEvent("SancOfFlameCinas", 2500, 0)
+	pUnit:SpawnGameObject(70324, SoFGurlock:GetX(), SoFGurlock:GetY(), SoFGurlock:GetZ(), 0, 3500)
+	pUnit:SpawnGameObject(70324, SoFTirion:GetX(), SoFTirion:GetY(), SoFTirion:GetZ(), 0, 3500)
+	SoFRaggy:RegisterEvent("SancOfFlameCinas", 2500, 0)
 end
 
 function SancOfFlameCinas(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500Rise up, heroes!")
-	FireR:RegisterEvent("FreezingDespawn", 999, 0)
+	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500Rise up, heroes!")
+	SoFRaggy:RegisterEvent("FreezingDespawn", 999, 0)
 end
 
 function FreezingDespawn(pUnit, Event)
     pUnit:RemoveEvents()
 	KF:Despawn(1,0)
-	FireR:RegisterEvent("SancOfFlameCinat", 1, 0)
+	SoFRaggy:RegisterEvent("SancOfFlameCinat", 1, 0)
 end
 
 function SancOfFlameCinat(pUnit, Event)
     pUnit:RemoveEvents()
-	local DefrostAll = FireR:GetInRangePlayers()
+	local DefrostAll = SoFRaggy:GetInRangePlayers()
 	for k, v in pairs(DefrostAll) do
 	v:RemoveAura(71614)
 	v:SetPlayerLock(false)
 	end
-	FireA:RemoveAura(71614)
-	FireH:RemoveAura(71614)
-	FireR:RegisterEvent("SancOfFlameCinau", 1000, 0)
+	SoFTirion:RemoveAura(71614)
+	SoFGurlock:RemoveAura(71614)
+	SoFRaggy:RegisterEvent("SancOfFlameCinau", 1000, 0)
 end
 
 function SancOfFlameCinau(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:SetFacing(5.330630)
-	FireL:SendChatMessage(14, 0, "\124c007FFFD4Impossible...")
-	FireR:RegisterEvent("SancOfFlameCinav", 2000, 0)
+	SoFArthas:SetFacing(5.330630)
+	SoFArthas:SendChatMessage(14, 0, "\124c007FFFD4Impossible...")
+	SoFRaggy:RegisterEvent("SancOfFlameCinav", 2000, 0)
 end
 
 function SancOfFlameCinav(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:MoveTo(-241.8, 160.7, -18.7)
-	FireA:SetFacing(4.754189)
-	FireA:SetOrientation(4.754189)
-	FireH:MoveTo(-247.1, 155.1, -18.7)
-	FireH:SetFacing(4.167274)
-	FireH:SetOrientation(4.167274)
-	FireA:SendChatMessage(12, 0, "\124c000070ddGive up Arthas, you are beaten! Lay down Frostmourne and surrender youself!")
-	FireR:RegisterEvent("SancOfFlameCinaw", 3000, 0)
+	SoFTirion:MoveTo(-241.8, 160.7, -18.7)
+	SoFTirion:SetFacing(4.754189)
+	SoFTirion:SetOrientation(4.754189)
+	SoFGurlock:MoveTo(-247.1, 155.1, -18.7)
+	SoFGurlock:SetFacing(4.167274)
+	SoFGurlock:SetOrientation(4.167274)
+	SoFTirion:SendChatMessage(12, 0, "\124c000070ddGive up Arthas, you are beaten! Lay down Frostmourne and surrender youself!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinaw", 3000, 0)
 end
 
 function SancOfFlameCinaw(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:Emote(375, 4500)
-	FireH:Emote(375, 4500)
-	FireL:SendChatMessage(14, 0, "\124c007FFFD4This isn't over. When next we meet, it will be on my grounds..")
-	FireR:RegisterEvent("SancOfFlameCinax", 3000, 0)
+	SoFTirion:Emote(375, 4500)
+	SoFGurlock:Emote(375, 4500)
+	SoFArthas:SendChatMessage(14, 0, "\124c007FFFD4This isn't over. When next we meet, it will be on my grounds..")
+	SoFRaggy:RegisterEvent("SancOfFlameCinax", 3000, 0)
 end
 
 function SancOfFlameCinax(pUnit, Event)
     pUnit:RemoveEvents()
-    --FireR:SpawnCreature(Ghoula, -251.9, 145.2, -18.65, 1.029608, 35, 0);
-    --FireR:SpawnCreature(Ghoulb, -234.8, 160.5, -18.68, 3.172174, 35, 0);
-	FireR:RegisterEvent("SancOfFlameCinay", 1500, 0)
+    --SoFRaggy:SpawnCreature(Ghoula, -251.9, 145.2, -18.65, 1.029608, 35, 0);
+    --SoFRaggy:SpawnCreature(Ghoulb, -234.8, 160.5, -18.68, 3.172174, 35, 0);
+	SoFRaggy:RegisterEvent("SancOfFlameCinay", 1500, 0)
 end
 
 function SancOfFlameCinay(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:SetMovementType(256)
-	FireL:ModifyWalkSpeed(7)
-	FireL:MoveTo(-244.4, 154.1, -18.8)
+	SoFArthas:SetMovementType(256)
+	SoFArthas:ModifyWalkSpeed(7)
+	SoFArthas:MoveTo(-244.4, 154.1, -18.8)
 	--FireGa:MoveTo(-240.8, 139.5, -18.7)
 	--FireGb:MoveTo(-240.8, 139.5, -18.7)
-	FireA:SetFacing(4.754189)
-	FireH:SetFacing(5.016736)
-	FireA:SendChatMessage(14, 0, "\124c000070ddYOU COWARD!")
-	FireR:RegisterEvent("SancOfFlameCinaz", 2000, 0)
+	SoFTirion:SetFacing(4.754189)
+	SoFGurlock:SetFacing(5.016736)
+	SoFTirion:SendChatMessage(14, 0, "\124c000070ddYOU COWARD!")
+	SoFRaggy:RegisterEvent("SancOfFlameCinaz", 2000, 0)
 end
 
 function SancOfFlameCinaz(pUnit, Event)
     pUnit:RemoveEvents()
-	FireL:MoveTo(-240.8, 139.5, -18.7)
-	--FireR:RegisterEvent("SancOfFlameCinba", 2000, 0)
+	SoFArthas:MoveTo(-240.8, 139.5, -18.7)
+	--SoFRaggy:RegisterEvent("SancOfFlameCinba", 2000, 0)
 end
 
 
