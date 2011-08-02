@@ -116,8 +116,7 @@ function Draco_Cinematica(pUnit, Event)
 pUnit:RemoveEvents()
 Draco = pUnit
 pUnit:SetHealth(DracoFight:GetHealth())
-pUnit:SetMovementType(256)
-pUnit:ModifyWalkSpeed(10)
+pUnit:ModifyWalkSpeed(7)
 pUnit:MoveTo(-248.328094, 162.778381, -18.64566, 2.26384)
 DracoFight:Despawn(1,0)
 pUnit:RegisterEvent("Draco_Cinematicb", 7000, 0)
@@ -201,7 +200,7 @@ end
 
 function Rag_Cinematice(pUnit, Event)
     pUnit:RemoveEvents()
-	pUnit:SendChatMessage(14, 0, "\124c00FFA500Very well then, I Shall grace them with my attention for now, I have other important matters to attend to. You may leave now, Draco.")
+	pUnit:SendChatMessage(14, 0, "\124c00FFA500Very well then, I shall grace them with my attention for now, I have other important matters to attend to. You may leave now, Draco.")
     pUnit:RegisterEvent("Rag_Cinematicf", 6500, 0)
 end
 --=====Draco Dismiss=====--
@@ -264,7 +263,7 @@ function Rag_Cinematicl(pUnit, Event)
     pUnit:RemoveEvents()
     FireR:SetFacing(5.36497)
     pUnit:SetOrientation(5.36497)
-	FireR:SendChatMessage(14, 0, "\124c00FFA500What is the meaning of this?...")
+	FireR:SendChatMessage(14, 0, "\124c00FFA500What is the meaning of this..?")
 	pUnit:RegisterEvent("Rag_Cinematicm", 3000, 0)
 end
 
@@ -295,14 +294,14 @@ end
 
 function Rag_Cinematicp(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(12, 0, "\124c00FFA500I tire of this. I have more important matters to attend to...")
+	FireR:SendChatMessage(14, 0, "\124c00FFA500I tire of this. I have more important matters to attend to...")
 	pUnit:RegisterEvent("Rag_Cinematicq", 4000, 0)
 end
 
 function Rag_Cinematicq(pUnit, Event)
     pUnit:RemoveEvents()
 	FireH:Emote(15, 3000)
-	FireH:SendChatMessage(12, 0, "\124c00FF3333With Arthas? You are being manipulated, Ragnaros! He plans to use you to achieve his ultimate goal: To dominate Azeroth and extinquish all of those living in it!")
+	FireH:SendChatMessage(14, 0, "\124c00FF3333With Arthas? You are being manipulated, Ragnaros! He plans to use you to achieve his ultimate goal: To dominate Azeroth and extinquish all of those living in it!")
 	FireH:RegisterEvent("HEmotea", 3000, 0)
 end
 ---Emotes... Long Talk---
@@ -320,7 +319,7 @@ end
 -----------------------
 function SancOfFlameCina(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(12, 0, "\124c00FFA500I see.. Perhaps I am making a mistake..")
+	FireR:SendChatMessage(14, 0, "\124c00FFA500I see.. Perhaps I am making a mistake..")
 	FireR:RegisterEvent("SancOfFlameCinb", 3000, 0)
 end
 
@@ -356,7 +355,7 @@ end
 
 function SancOfFlameCinf(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(12, 0, "\124c00FFA500Very well, I will end my negotiations with Arthas, and pledge myself and my forces against Arthas and the Scourge!")
+	FireR:SendChatMessage(14, 0, "\124c00FFA500Very well, I will end my negotiations with Arthas, and pledge myself and my forces against Arthas and the Scourge!")
 	FireR:RegisterEvent("SancOfFlameCing", 2000, 0)
 end
 
@@ -390,8 +389,8 @@ end
 
 function SancOfFlameCinj(pUnit, Event)
     pUnit:RemoveEvents()
-	FireA:SetFacing(4.804136)
-    FireA:SetOrientation(4.804136)
+	FireA:SetFacing(3.834716)
+    FireA:SetOrientation(3.834716)
     FireH:SetFacing(5.266430)
     FireH:SetOrientation(5.266430)
 	FireR:SpawnCreature(LichKing, -240.731, 139.047, -18.6238, 1.86733, 35, 0);
@@ -402,22 +401,22 @@ function SancOfFlameCink(pUnit, Event)
     pUnit:RemoveEvents()
 	FireA:Emote(45, 10000)
 	FireH:Emote(45, 10000)
-    FireA:SendChatMessage(12, 0, "\124c000070ddARTHAS!")
+    FireA:SendChatMessage(14, 0, "\124c000070ddARTHAS!")
 	FireR:RegisterEvent("SancOfFlameCinl", 2500, 0)
 end
 
 function SancOfFlameCinl(pUnit, Event)
     pUnit:RemoveEvents()
-    FireH:SendChatMessage(12, 0, "\124c00FF3333You shall pay for what you have done, you monster!")
+    FireH:SendChatMessage(14, 0, "\124c00FF3333You shall pay for what you have done, you monster!")
 	FireR:RegisterEvent("SancOfFlameCinaa", 3000, 0)
 end
 
 function SancOfFlameCinaa(pUnit, Event)
     pUnit:RemoveEvents()
 	FireH:SetMovementType(256)
-	FireH:ModifyWalkSpeed(7)
+	FireH:ModifyWalkSpeed(8)
 	FireH:MoveTo(-245.224640, 147.438416, -18.7)
-    FireH:SendChatMessage(12, 0, "\124c00FF3333Lok'tar Ogar!")
+    FireH:SendChatMessage(14, 0, "\124c00FF3333Lok'tar Ogar!")
 	FireR:RegisterEvent("SancOfFlameCinab", 1000, 0)
 end
 
@@ -458,7 +457,7 @@ end
 function SancOfFlameCinag(pUnit, Event)
     pUnit:RemoveEvents()
 	FireA:Emote(375, 1000)
-    FireA:SendChatMessage(14, 0, "\124c000070ddChampions, ATTACK!")
+    FireA:SendChatMessage(14, 0, "\124c000070ddATTACK!")
 	FireR:RegisterEvent("SancOfFlameCinah", 2000, 1)
 end
 
@@ -580,7 +579,11 @@ end
 function SancOfFlameCinav(pUnit, Event)
     pUnit:RemoveEvents()
 	FireA:MoveTo(-241.8, 160.7, -18.7)
+	FireA:SetFacing(4.754189)
+	FireA:SetOrientation(4.754189)
 	FireH:MoveTo(-247.1, 155.1, -18.7)
+	FireH:SetFacing(4.167274)
+	FireH:SetOrientation(4.167274)
 	FireA:SendChatMessage(12, 0, "\124c000070ddGive up Arthas, you are beaten! Lay down Frostmourne and surrender youself!")
 	FireR:RegisterEvent("SancOfFlameCinaw", 3000, 0)
 end
@@ -607,9 +610,9 @@ function SancOfFlameCinay(pUnit, Event)
 	FireL:MoveTo(-244.4, 154.1, -18.8)
 	--FireGa:MoveTo(-240.8, 139.5, -18.7)
 	--FireGb:MoveTo(-240.8, 139.5, -18.7)
-	FireA:SetFacing(6.260360)
-	FireH:SetFacing(4.167274)
-	FireA:SendChatMessage(12, 0, "\124c000070ddArthas, you coward!")
+	FireA:SetFacing(4.754189)
+	FireH:SetFacing(5.016736)
+	FireA:SendChatMessage(14, 0, "\124c000070ddYOU COWARD!")
 	FireR:RegisterEvent("SancOfFlameCinaz", 2000, 0)
 end
 
