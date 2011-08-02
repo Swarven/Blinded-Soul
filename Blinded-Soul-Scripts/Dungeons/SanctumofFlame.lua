@@ -73,7 +73,7 @@ RegisterUnitEvent(990112, 18, "LichKing_OnSpawn")
 function Draco_OnCombat(pUnit, Event)
 pUnit:SendChatMessage(14, 0, "You go no further, heroes. Prepare to die.")
 --pUnit:RegisterEvent("Draco_Fire", 16000, 0)
-pUnit:RegisterEvent("Draco_HPCheckc", 2500, 0)
+pUnit:RegisterEvent("Draco_HPCheckc", 1000, 0)
 end
 
  --[[
@@ -119,7 +119,7 @@ pUnit:SetHealth(DracoFight:GetHealth())
 pUnit:SetMovementType(256)
 pUnit:ModifyWalkSpeed(7)
 pUnit:MoveTo(-248.328094, 162.778381, -18.64566, 2.26384)
-DracoFight:Despawn(1,0)
+DracoFight:Despawn(1500,0)
 pUnit:RegisterEvent("Draco_Cinematicb", 7000, 0)
 end
 
@@ -128,7 +128,6 @@ RegisterUnitEvent(DracoCin, 18, "Draco_Cinematica")
 function Draco_Cinematicb(pUnit, Event)
 pUnit:RemoveEvents()
 pUnit:SendChatMessage(14, 0, "Ragnaros, my lord! I summon you! These adventurers wish to have an audience with you!")
-pUnit:SetFacing(2.26384)
 pUnit:SetOrientation(2.26384)
 pUnit:SpawnCreature(DNDQuakeNPC, -244.445099, 180.548996, -29.92, 5.555173, 35, 0);
 pUnit:RegisterEvent("Draco_Cinematicc", 2000, 0)
@@ -262,7 +261,7 @@ end
 
 function Rag_Cinematicl(pUnit, Event)
     pUnit:RemoveEvents()
-    SoFRaggy:SetFacing(5.36497)
+    SoFRaggy:SetOrientation(5.36497)
     pUnit:SetOrientation(5.36497)
 	SoFRaggy:SendChatMessage(14, 0, "\124c00FFA500What is the meaning of this..?")
 	pUnit:RegisterEvent("Rag_Cinematicm", 3000, 0)
@@ -278,10 +277,8 @@ end
 function Rag_Cinematicn(pUnit, Event)
     pUnit:RemoveEvents()
 	SoFGurlock:Emote(1, 2000)
-	SoFGurlock:SetFacing(2.112275)
-    SoFGurlock:SetOrientation(2.112275)
-	SoFTirion:SetFacing(2.344839)
-    SoFTirion:SetOrientation(2.344839)
+	SoFGurlock:SetOrientation(2.112275)
+	SoFTirion:SetOrientation(2.344839)
 	SoFGurlock:SendChatMessage(12, 0, "\124c00FF3333And I am Gorlock, Warchief of the Horde.")
 	pUnit:RegisterEvent("Rag_Cinematico", 3000, 0)
 end
@@ -390,9 +387,7 @@ end
 
 function SancOfFlameCinj(pUnit, Event)
     pUnit:RemoveEvents()
-	SoFTirion:SetFacing(3.834716)
     SoFTirion:SetOrientation(3.834716)
-    SoFGurlock:SetFacing(5.266430)
     SoFGurlock:SetOrientation(5.266430)
 	SoFRaggy:SpawnCreature(LichKing, -240.731, 139.047, -18.6238, 1.86733, 35, 0);
 	SoFRaggy:RegisterEvent("SancOfFlameCink", 4000, 0)
@@ -415,8 +410,8 @@ end
 function SancOfFlameCinaa(pUnit, Event)
     pUnit:RemoveEvents()
 	SoFGurlock:SetMovementType(256)
+	SoFGurlock:SetMoveRunFlag(1)
 	SoFGurlock:ModifyWalkSpeed(16)
-	SoFGurlock:SetFacing(1.334732)
 	SoFGurlock:SetOrientation(1.334732)
 	SoFGurlock:MoveTo(-245.224640, 147.438416, -18.7)
     SoFGurlock:SendChatMessage(14, 0, "\124c00FF3333Lok'tar Ogar!")
@@ -425,7 +420,6 @@ end
 
 function SancOfFlameCinab(pUnit, Event)
     pUnit:RemoveEvents()
-	SoFArthas:SetFacing(2.309550)
     SoFArthas:SetOrientation(2.309550)
 	SoFGurlock:Emote(35, 5000)
 	SoFRaggy:RegisterEvent("SancOfFlameCinac", 2000, 0)
@@ -452,7 +446,6 @@ end
 
 function SancOfFlameCinaf(pUnit, Event)
     pUnit:RemoveEvents()
-	SoFArthas:SetFacing(1.883513)
     SoFArthas:SetOrientation(1.883513)
 	SoFRaggy:RegisterEvent("SancOfFlameCinag", 3000, 0)
 end
@@ -574,21 +567,19 @@ end
 
 function SancOfFlameCinau(pUnit, Event)
     pUnit:RemoveEvents()
-	SoFArthas:SetFacing(5.330630)
+	SoFArthas:SetOrientation(5.330630)
 	SoFArthas:SendChatMessage(14, 0, "\124c007FFFD4Impossible...")
-	SoFRaggy:RegisterEvent("SancOfFlameCinav", 4000, 0)
+	SoFRaggy:RegisterEvent("SancOfFlameCinav", 2000, 0)
 end
 
 function SancOfFlameCinav(pUnit, Event)
     pUnit:RemoveEvents()
 	SoFTirion:MoveTo(-241.8, 160.7, -18.7)
-	SoFTirion:SetFacing(4.754189)
-	SoFTirion:SetOrientation(4.754189)
 	SoFGurlock:MoveTo(-247.1, 155.1, -18.7)
-	SoFGurlock:SetFacing(4.167274)
+	SoFTirion:SetOrientation(4.754189)
 	SoFGurlock:SetOrientation(4.167274)
 	SoFTirion:SendChatMessage(12, 0, "\124c000070ddGive up Arthas, you are beaten! Lay down Frostmourne and surrender youself!")
-	SoFRaggy:RegisterEvent("SancOfFlameCinaw", 6000, 0)
+	SoFRaggy:RegisterEvent("SancOfFlameCinaw", 3000, 0)
 end
 
 function SancOfFlameCinaw(pUnit, Event)
@@ -613,8 +604,8 @@ function SancOfFlameCinay(pUnit, Event)
 	SoFArthas:MoveTo(-244.4, 154.1, -18.8)
 	--FireGa:MoveTo(-240.8, 139.5, -18.7)
 	--FireGb:MoveTo(-240.8, 139.5, -18.7)
-	SoFTirion:SetFacing(4.754189)
-	SoFGurlock:SetFacing(5.016736)
+	SoFTirion:SetOrientation(4.754189)
+	SoFGurlock:SetOrientation(5.016736)
 	SoFTirion:SendChatMessage(14, 0, "\124c000070ddYOU COWARD!")
 	SoFRaggy:RegisterEvent("SancOfFlameCinaz", 2000, 0)
 end
