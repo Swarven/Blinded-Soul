@@ -509,7 +509,7 @@ end
 
 function SancOfFlameCinan(pUnit, Event)
     pUnit:RemoveEvents()
-	FireR:SendChatMessage(14, 0, "\124c00FFA500Negotiations are over! i will never ally myself with the likes of you!")
+	FireR:SendChatMessage(14, 0, "\124c00FFA500Negotiations are over! I will never ally myself with the likes of you!")
 	FireR:RegisterEvent("SancOfFlameCinao", 2500, 0)
 end
 
