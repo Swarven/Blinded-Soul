@@ -9,12 +9,12 @@ player:SendBroadcastMessage("--XDemonic [Owner]")
 player:SendBroadcastMessage(">Default Settings Saved, Restart Jukebox<")
 player:GossipComplete()
 else
-player:SendBroadcastMessage("Welcome To JukeBox.")
+player:SendBroadcastMessage("Welcome to the Jukebox.")
 item:GossipCreateMenu(50, player, 0)
-item:GossipMenuAddItem(3, "JukeBox", 1, 0)
+item:GossipMenuAddItem(3, "Jukebox", 1, 0)
 --------------------------
 if player:IsGm() then
-item:GossipMenuAddItem(3, "Admin - JukeBox", 2, 0)
+item:GossipMenuAddItem(3, "Admin - Jukebox", 2, 0)
 end
 -----------------------
 if (ScriptDBQuery("SELECT flags FROM Jukebox_Settings WHERE name = '"..GetName.."'", 0):GetColumn(0):GetString() == "0") then
@@ -29,7 +29,7 @@ item:GossipMenuAddItem(3, "Stop Current Song", 1000, 0)
 if player:IsGm() then
 item:GossipMenuAddItem(3, "Admin - Stop Current Song", 1001, 0)
 end
-item:GossipMenuAddItem(3, "test....", 5555, 0)
+item:GossipMenuAddItem(3, "Test...", 5555, 0)
 item:GossipMenuAddItem(3, "Never Mind", 3, 0)
 item:GossipSendMenu(player)
 end
@@ -39,12 +39,12 @@ end
 function JukeBox_Click2(item, event, player, id, intid, code, pMisc)
 if (intid == 9999) then
 local GetName = player:GetName()
-player:SendBroadcastMessage("Welcome To JukeBox.")
+player:SendBroadcastMessage("Welcome to the Jukebox.")
 item:GossipCreateMenu(50, player, 0)
-item:GossipMenuAddItem(3, "JukeBox", 1, 0)
+item:GossipMenuAddItem(3, "Jukebox", 1, 0)
 --------------
 if player:IsGm() then
-item:GossipMenuAddItem(3, "Admin - JukeBox", 2, 0)
+item:GossipMenuAddItem(3, "Admin - Jukebox", 2, 0)
 end
 ---------------------------------
 if (ScriptDBQuery("SELECT flags FROM Jukebox_Settings WHERE name = '"..GetName.."'", 0):GetColumn(0):GetString() == "0") then
@@ -60,7 +60,7 @@ item:GossipSendMenu(player)
 end
 
 if (intid == 1) then
-player:SendBroadcastMessage("Pick A Song You Wish To Play...")
+player:SendBroadcastMessage("Pick a song you wish to play.")
 item:GossipCreateMenu(50, player, 0)
 item:GossipMenuAddItem(3, "Ten Thousand Fists", 100, 0)
 item:GossipMenuAddItem(3, "Click Click Boom", 101, 0)
@@ -77,7 +77,7 @@ end
 
 if (intid == 2) then
 dofile("scripts/JukeBox.lua")
-player:SendBroadcastMessage("JukeBox Globally Reloaded... Pick A Song You Wish To Play... These Songs Will Be Played By Everyone In The Server...")
+player:SendBroadcastMessage("JukeBox blobally reloaded. Pick a Song you wish to play. These songs will be played by everyone in the server.")
 item:GossipCreateMenu(50, player, 0)
 item:GossipMenuAddItem(3, "Ten Thousand Fists", 200, 0)
 item:GossipMenuAddItem(3, "Click Click Boom", 201, 0)
@@ -98,7 +98,7 @@ end
 
 if (intid == 1000) then
 player:PlaySoundToPlayer(1)
-player:SendBroadcastMessage("Stopping Current Song...")
+player:SendBroadcastMessage("Stopping Current Song.")
 player:GossipComplete()
 end
 
@@ -245,7 +245,7 @@ player:GossipComplete()
 end
 -----JukeBox Parody Songs-----
 if (intid == 150) then
-player:SendBroadcastMessage("Parody Songs Is Currently Unavailiable")
+player:SendBroadcastMessage("The Parody Songs category is currently unavailiable")
 item:GossipCreateMenu(50, player, 0)
 item:GossipMenuAddItem(2, "Back", 1, 0)
 item:GossipSendMenu(player)
@@ -459,7 +459,7 @@ end
 end
 -----Admin JukeBox Parody Songs-----
 if (intid == 250) then
-player:SendBroadcastMessage("Parody Songs Is Currently Unavailiable")
+player:SendBroadcastMessage("The Parody Songs category is currently unavailiable")
 item:GossipCreateMenu(50, player, 0)
 item:GossipMenuAddItem(2, "Back", 2, 0)
 item:GossipSendMenu(player)
@@ -483,7 +483,7 @@ end
 if (intid == 1000) then
 player:PlaySoundToPlayer(113)
 player:SendBroadcastMessage("---Song Stopped---")
-player:SendBroadcastMessage("NOTE: This May Not Always Stop The Song, It Will Only Stop If You Are In The Same Area As When you Started The Song.")
+player:SendBroadcastMessage("NOTE: This may not always stop the song. It will only stop if you are in the same area as when you started the song.")
 player:SendBroadcastMessage("---XDemonic")
 player:GossipComplete()
 end
@@ -494,7 +494,7 @@ for k, All in pairs(AdminPlayall) do
 if (ScriptDBQuery("SELECT flags FROM Jukebox_Settings WHERE name = '"..All:GetName().."'", 0):GetColumn(0):GetString() == "0") then
 All:PlaySoundToPlayer(113)
 All:SendBroadcastMessage("---Global Song Stopped---")
-All:SendBroadcastMessage("NOTE: This May Not Always Stop The Song, It Will Only Stop If You Are In The Same Area As When you Started The Song.")
+All:SendBroadcastMessage("NOTE: This may not always stop the song. It will only stop if you are in the same area as when you started the song.")
 All:SendBroadcastMessage("---XDemonic")
 player:GossipComplete()
 else
